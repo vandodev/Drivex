@@ -4,7 +4,7 @@ import {Container} from '../../styles';
 
 const Login = () => {
   return (
-    <Container>
+    <Container color="info50">
       <Text>Login</Text>
     </Container>
   );
