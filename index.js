@@ -11,4 +11,4 @@ import Payment from './src/pages/Steps/payment';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Car);
+AppRegistry.registerComponent(appName, () => Payment);

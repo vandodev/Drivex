@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Text, Image,Keyboard} from 'react-native';
+import {Keyboard} from 'react-native';
 
 import {
   Container,
