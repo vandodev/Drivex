@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Text, Image,Keyboard} from 'react-native';
 
 import {
@@ -12,6 +12,22 @@ import {
 } from '../../styles';
 
 const Car = () => {
+
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+
+    const keyboarDidShowListener = Keyboard.addListener('keyboardDidShow', () =>setVisible(false));
+    const keyboarDidHideListener = Keyboard.addListener('keyboardDidHide', () =>setVisible(true));
+
+    return () => {
+      keyboarDidShowListener.remove();
+      keyboarDidHideListener.remove();
+    }
+
+
+  }, [])
+
   return (
     <Container padding={30} justify="flex-start">
       <Container align="flex-start" height={40}>
@@ -28,11 +44,14 @@ const Car = () => {
         <Spacer />
         <Input placeholder="Cor do veículo" />
       </Container>
-      <Container height={70} justify="flex-end">
-        <Button>
-          <ButtonText>Comece a usar</ButtonText>
-        </Button>
-      </Container>
+
+      {visible && (
+        <Container height={70} justify="flex-end">
+          <Button>
+            <ButtonText>Comece a usar</ButtonText>
+          </Button>
+        </Container>
+      )}
     </Container>
   );
 };
