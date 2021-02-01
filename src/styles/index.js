@@ -29,3 +29,31 @@ export const ButtonText = styled.Text`
   text-align: center;
   color: ${(props) => (props.color ? theme.colors[props.color] : '#000')};
 `;
+
+export const Title = styled.Text`
+  font-size: 20px;
+  color: ${theme.colors.dark};
+  font-weight: bold;
+`;
+
+export const SubTitle = styled.Text`
+  font-size: ${(props) => (props.small ? '12px' : '15px')};
+  opacity: 0.7;
+  font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
+  color: ${(props) =>
+    props.color ? theme.colors[props.color] : theme.colors.dark};
+`;
+
+export const PickerButton = styled.TouchableOpacity`
+  width: 100%;
+  height: 40%;
+  margin-top: 2.5%;
+  border-width: 3px;
+  border-style: solid;
+  justify-content: space-around;
+  align-items: center;
+  border-color: ${(props) =>
+    props.active ? theme.colors.primary : theme.colors.muted50};
+  background-color: ${(props) =>
+    props.active ? theme.colors.primary + '80' : theme.colors.muted50};
+`;
