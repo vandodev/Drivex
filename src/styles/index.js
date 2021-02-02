@@ -69,3 +69,14 @@ export const Spacer = styled.View`
   width: ${(props) => props.width || '100%'};
   height: ${(props) => props.height || '10'}px;
 `;
+
+export const AddressList = styled.FlatList`
+  flex:1;
+  width: 100%;
+  padding-top: 10;
+`;
+
+export const AddressItem = styled.TouchableOpacity`
+  padding:5px 0;
+  align-items: flex-start;
+`;
